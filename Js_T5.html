@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Create an object using constructor method and add data to it by taking input from the user.
+      function Employee(eid, ename, email) {
+        this.id = eid;
+        this.name = ename;
+        this.email = email;
+      }
+      let eid = prompt("Enter Employee Id");
+      let ename = prompt("Enter Employee name");
+      let email = prompt("Enter Employee Email");
+
+      let emp = new Employee(eid, ename, email);
+      console.log(emp);
+
+      //  Ask user what data they want to print from object and print only that data on the webpage.
+      let person = {
+        name: "John",
+        age: 30,
+        location: "Developer",
+      };
+
+      let dataToPrint = prompt(
+        "What data do you want to print? (name/age/location)",
+      );
+      document.write(person[dataToPrint]);
+      //  Create multiple objects of students and print them on the webpage.
+      let obj1 = {
+        id: 707,
+        name: "Sandhya",
+        age: 22,
+        email: "srk40@gmail.com",
+        city: "Pune",
+      };
+      let obj2 = {
+        id: 808,
+        name: "Aishu",
+        age: 24,
+        email: "aishu50@yahoo.com",
+        city: "Delhi",
+      };
+      let obj3 = {
+        id: 909,
+        name: "Karan",
+        age: 25,
+        email: "karan60@gmail.com",
+        city: "Bangalore",
+      };
+
+      document.write(`<h3>Student</h3><br>`);
+      for (let key in obj1) {
+        document.write(`${key}: ${obj2[key]}</br>`);
+      }
+      document.write(`<h3>Student</h3><br>`);
+      for (let key in obj2) {
+        document.write(`${key}: ${obj2[key]}</br>`);
+      }
+      document.write(`<h3>Student</h3><br>`);
+      for (let key in obj3) {
+        document.write(`${key}: ${obj3[key]}</br>`);
+      }
+
+      //  Create a nested object of laptopDetails inside the Employee object and print the laptopDetails object only.
+      let employee = {
+        id: 1,
+        name: "Sandhya",
+        laptop: {
+          brand: "Lenovo",
+          model: "ThinkPad",
+          ram: "16GB",
+          storage: "512GB SSD",
+        },
+      };
+
+      document.write("<h2>Laptop Details:</h2>");
+      for (let key in employee.laptop) {
+        document.write(`${key}: ${employee.laptop[key]}<br>`);
+      }
+    </script>
+  </body>
+</html>
