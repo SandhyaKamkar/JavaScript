@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Find the sum of all elements of the array
+      let arr1 = [1, 2, 3, 4, 5, 6, 7, 8];
+      console.log(arr1);
+      console.log(`sum of num:${arr1.reduce((a, b) => a + b)}`);
+
+      // Find the largest number from the array
+      let arr2 = [65, 34, 78, 2, 4, 98, 67, 34];
+      let largest = arr2[0];
+
+      for (let i = 1; i < arr2.length; i++) {
+        if (arr2[i] > largest) {
+          largest = arr2[i];
+        }
+      }
+      console.log(arr2);
+      console.log(`larget num:${largest}`);
+
+      // Reverse the array without using reverse method.
+      let arr3 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+      let reversed = arr3.slice().reverse();
+      console.log(arr3);
+      console.log(`Reversed: ${reversed}`);
+
+      // Count how many times an element appears in an array
+      let arr4 = [3, 6, 7, 5, 4, 3, 4, 5, 6, 5, 5];
+
+      console.log(arr4);
+      let element = +prompt("element to check ");
+      let count = 0;
+      for (let i = 0; i < arr4.length; i++) {
+        if (element === arr4[i]) {
+          count++;
+        }
+      }
+
+      console.log(`${element} is repeated in array ${count} times`);
+
+      // Remove duplicate elements from the array
+      let arr = [1, 2, 2, 3, 4, 4];
+      console.log(arr);
+      let unique = [];
+
+      arr.forEach((num) => {
+        if (!unique.includes(num)) {
+          unique.push(num);
+        }
+      });
+
+      console.log(`Array without duplicates:${unique}`);
+
+      // Find the second largest number from the array
+      let arr6 = [45, 34, 67, 89, 23, 79, 70];
+      console.log(arr6);
+
+      let unique1 = [...new Set(arr6)];
+
+      unique1.sort((a, b) => b - a);
+
+      console.log("Second Largest Number:", unique1[1]);
+
+      // Merge two arrays into one and sort them.
+      let arr_1 = [5, 2, 8];
+      let arr_2 = [1, 7, 3];
+
+      let merged = arr_1.concat(arr_2);
+
+      merged.sort((a, b) => a - b);
+      console.log(arr_1);
+      console.log(arr_2);
+      console.log("Merged and Sorted Array:", merged);
+
+      // Check if the given array is sorted or not.
+      let arr8 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+      console.log(arr8);
+
+      let sorted = arr8.every(
+        (value, index) => index === 0 || value >= arr8[index - 1],
+      );
+
+      if (sorted) {
+        console.log("Array is sorted");
+      } else {
+        console.log("Array is not sorted");
+      }
+
+      // Convert all element from an array of string to uppercase.
+      let arr9 = ["Sandhya", "Aishu", "Swati"];
+
+      console.log(arr9);
+
+      let upper = arr9.map((str) => str.toUpperCase());
+
+      console.log("Uppercase Array:", upper);
+
+      // Filter all the even numbers from the array.
+      let arr10 = [1, 2, 3, 4, 5, 6];
+      console.log(arr10);
+
+      let even = [];
+
+      arr10.forEach((num) => {
+        if (num % 2 === 0) {
+          even.push(num);
+        }
+      });
+
+      console.log(even);
+    </script>
+  </body>
+</html>
