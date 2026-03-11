@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!doctype html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Calculator</title>
+
+        <style>
+          .container {
+            width: 40%;
+            margin: auto;
+            border: 2px solid;
+            border-radius: 10px;
+            position: relative;
+            top: 200px;
+            display: flex;
+            flex-direction: column;
+          }
+
+          .op-div {
+            width: 100%;
+            margin-block: 12px;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: center;
+          }
+          .input-div {
+            width: 100%;
+            margin-block: 12px;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-around;
+          }
+          .button-div {
+            width: 100%;
+            margin-block: 12px;
+            padding-inline: 8px;
+            display: flex;
+            flex-flow: column wrap;
+            align-content: center;
+            button {
+              width: 60%;
+              margin-block: 8px;
+            }
+          }
+        </style>
+      </head>
+
+      <body>
+        <div class="container">
+          <div class="op-div">
+            <input type="text" id="op-disp" readonly />
+          </div>
+
+          <div class="input-div">
+            <input type="number" id="ip1" />
+            <input type="number" id="ip2" />
+          </div>
+
+          <div class="button-div">
+            <button onclick="calc('add')">Addition</button>
+            <button onclick="calc('sub')">Subtraction</button>
+            <button onclick="calc('mul')">Multiplication</button>
+            <button onclick="calc('div')">Division</button>
+          </div>
+        </div>
+
+        <script>
+          function calc(operation) {
+            let n1 = Number(document.getElementById("ip1").value);
+            let n2 = Number(document.getElementById("ip2").value);
+            let result;
+
+            switch (operation) {
+              case "add":
+                result = n1 + n2;
+                break;
+
+              case "sub":
+                result = n1 - n2;
+                break;
+
+              case "mul":
+                result = n1 * n2;
+                break;
+
+              case "div":
+                result = n1 / n2;
+                break;
+
+              default:
+                result = "Invalid";
+            }
+
+            document.getElementById("op-disp").value = result;
+          }
+        </script>
+      </body>
+    </html>
+  </head>
+</html>
