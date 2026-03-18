@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Form Event Example</title>
+
+    <style>
+      body {
+        position: relative;
+        height: 500px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Arial;
+      }
+
+      .container {
+        border: 5px solid black;
+        padding: 30px;
+        text-align: center;
+        background: white;
+      }
+
+      input {
+        padding: 8px;
+        margin: 10px;
+      }
+
+      button {
+        padding: 8px 15px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container" id="box">
+      <form onsubmit="showMsg(event)">
+        <input
+          type="text"
+          id="name"
+          placeholder="Enter name"
+          oninput="changeColor()"
+        />
+
+        <br />
+
+        <button type="submit">Submit</button>
+      </form>
+
+      <h2 id="result">Hello</h2>
+    </div>
+
+    <script>
+      function changeColor() {
+        let name = document.getElementById("name").value;
+        let len = name.length;
+
+        document.getElementById("result").innerHTML = "Hello " + name;
+
+        let box = document.getElementById("box");
+
+        switch (len) {
+          case 1:
+            document.body.style.background = "red";
+            box.style.background = "red";
+            break;
+
+          case 2:
+            document.body.style.background = "blue";
+            box.style.background = "blue";
+            break;
+
+          case 3:
+            document.body.style.background = "green";
+            box.style.background = "green";
+            break;
+
+          case 4:
+            document.body.style.background = "orange";
+            box.style.background = "orange";
+            break;
+
+          case 5:
+            document.body.style.background = "pink";
+            box.style.background = "pink";
+            break;
+
+          case 6:
+            document.body.style.background = "yellow";
+            box.style.background = "yellow";
+            break;
+
+          default:
+            document.body.style.background = "lightgray";
+            box.style.background = "white";
+        }
+      }
+    </script>
+  </body>
+</html>
